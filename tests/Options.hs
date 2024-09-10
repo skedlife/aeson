@@ -4,7 +4,7 @@ module Options (module Options) where
 
 import Prelude.Compat
 
-import Data.Aeson.Types
+import Data.AesonAlt.Types
 import Data.Char
 
 optsDefault :: Options

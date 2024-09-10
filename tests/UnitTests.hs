@@ -13,7 +13,7 @@
 {-# LANGUAGE StandaloneDeriving #-}
 #endif
 
--- For Data.Aeson.Types.camelTo
+-- For Data.AesonAlt.Types.camelTo
 {-# OPTIONS_GHC -fno-warn-deprecations #-}
 
 {-# OPTIONS_GHC -fno-warn-unused-top-binds #-}
@@ -28,12 +28,12 @@ module UnitTests
 import Prelude.Compat
 
 import Control.Monad (forM, forM_, when)
-import Data.Aeson ((.=), (.:), (.:?), (.:!), FromJSON(..), ToJSON1(..), decode, eitherDecode, encode, fromJSON, genericParseJSON, genericToEncoding, genericToJSON, object, withObject, withEmbeddedJSON)
-import Data.Aeson.Types (JSONPathElement(..), formatError)
-import Data.Aeson.QQ.Simple (aesonQQ)
-import Data.Aeson.TH (deriveJSON, deriveToJSON, deriveToJSON1)
-import Data.Aeson.Text (encodeToTextBuilder)
-import Data.Aeson.Types
+import Data.AesonAlt ((.=), (.:), (.:?), (.:!), FromJSON(..), ToJSON1(..), decode, eitherDecode, encode, fromJSON, genericParseJSON, genericToEncoding, genericToJSON, object, withObject, withEmbeddedJSON)
+import Data.AesonAlt.Types (JSONPathElement(..), formatError)
+import Data.AesonAlt.QQ.Simple (aesonQQ)
+import Data.AesonAlt.TH (deriveJSON, deriveToJSON, deriveToJSON1)
+import Data.AesonAlt.Text (encodeToTextBuilder)
+import Data.AesonAlt.Types
   ( Options(..), Result(Success, Error), ToJSON(..)
   , Value(..), camelTo, camelTo2
   , defaultOptions, formatPath, formatRelativePath, omitNothingFields, parse)

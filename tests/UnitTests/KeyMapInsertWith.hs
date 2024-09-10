@@ -4,7 +4,7 @@ module UnitTests.KeyMapInsertWith (keyMapInsertWithTests) where
 import Test.Tasty (TestTree)
 import Test.Tasty.HUnit (testCase, (@?=))
 
-import qualified Data.Aeson.KeyMap as KM
+import qualified Data.AesonAlt.KeyMap as KM
 
 keyMapInsertWithTests :: TestTree
 keyMapInsertWithTests = testCase "KeyMap.insertWith" $ do

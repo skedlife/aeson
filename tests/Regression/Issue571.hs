@@ -5,7 +5,7 @@ import Test.Tasty (TestTree)
 import Test.Tasty.HUnit (testCase, (@?=))
 import GHC.Generics (Generic)
 
-import Data.Aeson
+import Data.AesonAlt
 
 data F = F
     { a :: Maybe Int

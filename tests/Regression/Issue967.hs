@@ -10,8 +10,8 @@ import Test.Tasty.HUnit (testCase, assertEqual)
 import qualified Data.Text.Lazy as LT
 import qualified Data.Text.Lazy.Encoding as LTE
 
-import Data.Aeson
-import Data.Aeson.TH
+import Data.AesonAlt
+import Data.AesonAlt.TH
 
 data DataA = DataA
   { val1 :: Int,

@@ -11,11 +11,11 @@ import qualified Data.ByteString.Lazy as LBS
 import qualified Data.ByteString.Lazy.Char8 as LBS8
 import qualified Data.Scientific as Sci
 
-import Data.Aeson
-import Data.Aeson.Decoding.ByteString.Lazy
-import Data.Aeson.Decoding.Tokens
-import Data.Aeson.QQ.Simple
-import Data.Aeson.RFC8785
+import Data.AesonAlt
+import Data.AesonAlt.Decoding.ByteString.Lazy
+import Data.AesonAlt.Decoding.Tokens
+import Data.AesonAlt.QQ.Simple
+import Data.AesonAlt.RFC8785
 
 import CastFloat
 import DoubleToScientific

@@ -24,28 +24,28 @@ module UnitTests.OmitNothingFieldsNote (omitNothingFieldsNoteTests) where
 --   } deriving 'Generic'
 --
 -- -- apples required, oranges optional
--- -- Even if 'Data.Aeson.fromJSON' is then specialized to (Fruit ('Maybe' a)).
--- instance 'Data.Aeson.FromJSON' a => 'Data.Aeson.FromJSON' (Fruit a)
+-- -- Even if 'Data.AesonAlt.fromJSON' is then specialized to (Fruit ('Maybe' a)).
+-- instance 'Data.AesonAlt.FromJSON' a => 'Data.AesonAlt.FromJSON' (Fruit a)
 --
 -- -- apples optional, oranges optional
 -- -- In this instance, the field apples is uniformly of type ('Maybe' a).
--- instance 'Data.Aeson.FromJSON' a => 'Data.Aeson.FromJSON' (Fruit ('Maybe' a))
+-- instance 'Data.AesonAlt.FromJSON' a => 'Data.AesonAlt.FromJSON' (Fruit ('Maybe' a))
 --
 -- options :: 'Options'
 -- options = 'defaultOptions' { 'omitNothingFields' = 'True' }
 --
 -- -- apples always present in the output, oranges is omitted if 'Nothing'
--- instance 'Data.Aeson.ToJSON' a => 'Data.Aeson.ToJSON' (Fruit a) where
---   'Data.Aeson.toJSON' = 'Data.Aeson.genericToJSON' options
+-- instance 'Data.AesonAlt.ToJSON' a => 'Data.AesonAlt.ToJSON' (Fruit a) where
+--   'Data.AesonAlt.toJSON' = 'Data.AesonAlt.genericToJSON' options
 --
 -- -- both apples and oranges are omitted if 'Nothing'
--- instance 'Data.Aeson.ToJSON' a => 'Data.Aeson.ToJSON' (Fruit ('Maybe' a)) where
---   'Data.Aeson.toJSON' = 'Data.Aeson.genericToJSON' options
+-- instance 'Data.AesonAlt.ToJSON' a => 'Data.AesonAlt.ToJSON' (Fruit ('Maybe' a)) where
+--   'Data.AesonAlt.toJSON' = 'Data.AesonAlt.genericToJSON' options
 
 import Test.Tasty (TestTree)
 import Test.Tasty.HUnit (testCase, (@?=))
 import GHC.Generics (Generic)
-import Data.Aeson
+import Data.AesonAlt
 
 omitNothingFieldsNoteTests :: TestTree
 omitNothingFieldsNoteTests = testCase "omitNothingFields Note" $ do

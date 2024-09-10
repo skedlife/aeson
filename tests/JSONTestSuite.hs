@@ -15,12 +15,12 @@ import qualified Data.ByteString.Lazy.Char8 as LBS8
 import qualified Data.HashSet as HashSet
 import qualified Data.Text.Encoding as TE
 
-import Data.Aeson
-import qualified Data.Aeson.Decoding as D
-import Data.Aeson.Decoding.Tokens
-import qualified Data.Aeson.Decoding.ByteString as D
-import qualified Data.Aeson.Decoding.ByteString.Lazy as D
-import qualified Data.Aeson.Decoding.Text as D
+import Data.AesonAlt
+import qualified Data.AesonAlt.Decoding as D
+import Data.AesonAlt.Decoding.Tokens
+import qualified Data.AesonAlt.Decoding.ByteString as D
+import qualified Data.AesonAlt.Decoding.ByteString.Lazy as D
+import qualified Data.AesonAlt.Decoding.Text as D
 
 
 jsonTestSuiteTest :: FilePath -> TestTree
@@ -63,7 +63,7 @@ jsonTestSuiteTest path = case take 2 fileName of
             payload' <- B.readFile path
             case TE.decodeUtf8' payload' of
                 Left exc -> fail $ show exc -- successful test shouldn't fail.
-                Right payload -> do 
+                Right payload -> do
                     let result = D.textToTokens payload
                     return (LBS8.pack (unlines (showTokens (const []) result)))
         ]
@@ -105,7 +105,7 @@ jsonTestSuiteTest path = case take 2 fileName of
                 Left _exc -> do
                     -- some failing cases are invalid UTF8
                     return (LBS8.pack "Invalid UTF8")
-                Right payload -> do 
+                Right payload -> do
                     let result = D.textToTokens payload
                     return (LBS8.pack (unlines (showTokens (const []) result)))
         ]

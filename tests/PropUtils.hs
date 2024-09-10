@@ -29,11 +29,11 @@ module PropUtils (
 
 import Prelude.Compat
 
-import Data.Aeson (eitherDecode, encode)
-import Data.Aeson.Encoding (encodingToLazyByteString)
-import Data.Aeson.Types
-import qualified Data.Aeson.Key as Key
-import qualified Data.Aeson.KeyMap as KM
+import Data.AesonAlt (eitherDecode, encode)
+import Data.AesonAlt.Encoding (encodingToLazyByteString)
+import Data.AesonAlt.Types
+import qualified Data.AesonAlt.Key as Key
+import qualified Data.AesonAlt.KeyMap as KM
 import Data.HashMap.Strict (HashMap)
 import Data.Hashable (Hashable)
 import Data.Map (Map)
@@ -44,7 +44,7 @@ import Types
 import Text.Read (readMaybe)
 import qualified Data.ByteString.Lazy.Char8 as L
 import qualified Data.Vector as V
-import qualified Data.Aeson.Decoding as Dec
+import qualified Data.AesonAlt.Decoding as Dec
 
 
 encodeDouble :: Double -> Double -> Property

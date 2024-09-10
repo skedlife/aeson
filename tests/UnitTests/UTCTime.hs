@@ -10,7 +10,7 @@ import Data.Time.Format.Compat (parseTimeM, defaultTimeLocale)
 import qualified Data.Text.Lazy as LT
 import qualified Data.Text.Lazy.Encoding as LT
 
-import Data.Aeson
+import Data.AesonAlt
 
 -- Test decoding various UTC time formats
 utcTimeGood :: Assertion

@@ -14,7 +14,7 @@ import Prelude.Compat
 import Control.Applicative (empty)
 import Control.Monad
 import Data.Maybe (mapMaybe)
-import Data.Aeson.Types
+import Data.AesonAlt.Types
 import Data.Function (on)
 import Data.Time (ZonedTime(..), TimeZone(..))
 import Data.Time.Clock (UTCTime(..))

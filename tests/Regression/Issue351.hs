@@ -7,7 +7,7 @@ import Data.Maybe (fromMaybe)
 
 import qualified Data.ByteString.Lazy as L
 
-import Data.Aeson
+import Data.AesonAlt
 
 -- A regression test for: https://github.com/bos/aeson/issues/351
 overlappingRegression :: FromJSON a => L.ByteString -> [a]

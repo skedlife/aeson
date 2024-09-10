@@ -6,7 +6,7 @@ module PropertyRoundTrip ( roundTripTests ) where
 import Prelude.Compat
 
 import Control.Applicative (Const)
-import Data.Aeson.Types
+import Data.AesonAlt.Types
 import Data.DList (DList)
 import Data.List.NonEmpty (NonEmpty)
 import Data.Map (Map)

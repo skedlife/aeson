@@ -7,15 +7,15 @@ import Test.Tasty.HUnit (testCase, Assertion, (@?=))
 
 import qualified Data.Map as Map -- Lazy
 
-import Data.Aeson
-import Data.Aeson.Types
-import qualified Data.Aeson.KeyMap as KM
+import Data.AesonAlt
+import Data.AesonAlt.Types
+import qualified Data.AesonAlt.KeyMap as KM
 
 -------------------------------------------------------------------------------
 -- MonadFix
 -------------------------------------------------------------------------------
 
-monadFixDecoding1 :: (Value -> Data.Aeson.Types.Parser [Char]) -> Assertion
+monadFixDecoding1 :: (Value -> Data.AesonAlt.Types.Parser [Char]) -> Assertion
 monadFixDecoding1 p = do
     fmap (take 10) (parseMaybe p value) @?= Just "xyzxyzxyzx"
   where
@@ -25,7 +25,7 @@ monadFixDecoding1 p = do
         , "quu" .= ('z', "foo" :: String)
         ]
 
-monadFixDecoding2 :: (Value -> Data.Aeson.Types.Parser [Char]) -> Assertion
+monadFixDecoding2 :: (Value -> Data.AesonAlt.Types.Parser [Char]) -> Assertion
 monadFixDecoding2 p = do
     fmap (take 10) (parseMaybe p value) @?= Nothing
   where
@@ -35,7 +35,7 @@ monadFixDecoding2 p = do
         , "quu" .= ('z', "foo" :: String)
         ]
 
-monadFixDecoding3 :: (Value -> Data.Aeson.Types.Parser [Char]) -> Assertion
+monadFixDecoding3 :: (Value -> Data.AesonAlt.Types.Parser [Char]) -> Assertion
 monadFixDecoding3 p =
     fmap (take 10) (parseMaybe p value) @?= Nothing
   where
@@ -45,7 +45,7 @@ monadFixDecoding3 p =
         , "quu" .= ('z', "foo" :: String)
         ]
 
-monadFixDecoding4 :: (Value -> Data.Aeson.Types.Parser [Char]) -> Assertion
+monadFixDecoding4 :: (Value -> Data.AesonAlt.Types.Parser [Char]) -> Assertion
 monadFixDecoding4 p =
     fmap (take 10) (parseMaybe p value) @?= Nothing
   where
@@ -56,15 +56,15 @@ monadFixDecoding4 p =
         ]
 
 -- Parser with explicit references
-monadFixParserA :: Value -> Data.Aeson.Types.Parser [Char]
+monadFixParserA :: Value -> Data.AesonAlt.Types.Parser [Char]
 monadFixParserA = withObject "Rec" $ \obj -> mdo
-    let p'' :: Value -> Data.Aeson.Types.Parser String
+    let p'' :: Value -> Data.AesonAlt.Types.Parser String
         p'' "foo" = return foo
         p'' "bar" = return bar
         p'' "quu" = return quu
         p'' _     = fail "Invalid reference"
 
-    let p' :: Value -> Data.Aeson.Types.Parser [Char]
+    let p' :: Value -> Data.AesonAlt.Types.Parser [Char]
         p' v = do
             (c, cs) <- liftParseJSON Nothing p'' (listParser p'') v
             return (c : cs)
@@ -75,9 +75,9 @@ monadFixParserA = withObject "Rec" $ \obj -> mdo
     return foo
 
 -- Parser with arbitrary references!
-monadFixParserB :: Value -> Data.Aeson.Types.Parser [Char]
+monadFixParserB :: Value -> Data.AesonAlt.Types.Parser [Char]
 monadFixParserB = withObject "Rec" $ \obj -> mdo
-    let p'' :: Value -> Data.Aeson.Types.Parser String
+    let p'' :: Value -> Data.AesonAlt.Types.Parser String
         p'' key' = do
             key <- parseJSON key'
             -- this is ugly: we look whether key is in original obj
@@ -88,7 +88,7 @@ monadFixParserB = withObject "Rec" $ \obj -> mdo
                 Just _  -> return (refs Map.! key)
                 Nothing -> fail "Invalid reference"
 
-    let p' :: Value -> Data.Aeson.Types.Parser [Char]
+    let p' :: Value -> Data.AesonAlt.Types.Parser [Char]
         p' v = do
             (c, cs) <- liftParseJSON Nothing p'' (listParser p'') v
             return (c : cs)

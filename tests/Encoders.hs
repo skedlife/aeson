@@ -9,9 +9,9 @@ module Encoders (module Encoders) where
 
 import Prelude.Compat
 
-import Data.Aeson.TH
-import Data.Aeson.Types
-import qualified Data.Aeson.Key as Key
+import Data.AesonAlt.TH
+import Data.AesonAlt.Types
+import qualified Data.AesonAlt.Key as Key
 import Options
 import Types
 

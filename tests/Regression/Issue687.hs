@@ -2,10 +2,10 @@
 module Regression.Issue687 where
 
 import GHC.Generics (Generic1)
-import Data.Aeson
-import Data.Aeson.Types (iparseEither)
-import Data.Aeson.Encoding (encodingToLazyByteString)
-import Data.Aeson.TH (deriveJSON1)
+import Data.AesonAlt
+import Data.AesonAlt.Types (iparseEither)
+import Data.AesonAlt.Encoding (encodingToLazyByteString)
+import Data.AesonAlt.TH (deriveJSON1)
 import Test.Tasty (TestTree)
 import Test.Tasty.HUnit (testCase, (@?=))
 

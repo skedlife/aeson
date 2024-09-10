@@ -10,8 +10,8 @@ module UnitTests.NullaryConstructors
 
 import Prelude.Compat
 
-import Data.Aeson (decode, eitherDecode, fromEncoding, Value)
-import Data.Aeson.Types (Parser, IResult (..), iparse)
+import Data.AesonAlt (decode, eitherDecode, fromEncoding, Value)
+import Data.AesonAlt.Types (Parser, IResult (..), iparse)
 import Data.ByteString.Builder (toLazyByteString)
 import Data.Foldable (for_)
 import Data.Maybe (fromJust)

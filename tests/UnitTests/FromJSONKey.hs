@@ -7,7 +7,7 @@ import Data.Text (Text)
 import Data.Tagged (Tagged)
 import Control.Applicative (Const)
 
-import Data.Aeson
+import Data.AesonAlt
 
 newtype MyText = MyText Text
     deriving (FromJSONKey)

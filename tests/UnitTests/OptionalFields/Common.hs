@@ -7,17 +7,17 @@
 
 module UnitTests.OptionalFields.Common
   ( module UnitTests.OptionalFields.Common
-  , module Data.Aeson
-  , module Data.Aeson.Types
-  , module Data.Aeson.TH
+  , module Data.AesonAlt
+  , module Data.AesonAlt.Types
+  , module Data.AesonAlt.TH
   , module Test.Tasty
   , module Test.Tasty.HUnit
   , module Data.Proxy
   ) where
 
-import Data.Aeson
-import Data.Aeson.Types
-import Data.Aeson.TH
+import Data.AesonAlt
+import Data.AesonAlt.Types
+import Data.AesonAlt.TH
 import Data.Maybe (isNothing)
 import GHC.Generics (Generic, Generic1)
 import Data.Proxy

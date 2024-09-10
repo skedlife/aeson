@@ -29,7 +29,7 @@ library twitter-generic
     Twitter.Options
 
   build-depends:
-      aeson
+      aeson-alt
     , base         <5
     , base-compat
     , deepseq
@@ -45,7 +45,7 @@ library twitter-th
     Twitter.TH
 
   build-depends:
-      aeson
+      aeson-alt
     , base         <5
     , base-compat
     , deepseq
@@ -60,7 +60,7 @@ library twitter-manual
     Twitter.Manual
 
   build-depends:
-      aeson
+      aeson-alt
     , base                   <5
     , base-compat-batteries
     , deepseq
@@ -72,7 +72,7 @@ library github
   ghc-options:      -Wall
   exposed-modules:  GitHub
   build-depends:
-      aeson
+      aeson-alt
     , base                   <5
     , base-compat-batteries
     , deepseq
@@ -86,7 +86,7 @@ executable aeson-example-generic
   main-is:          Generic.hs
   ghc-options:      -Wall
   build-depends:
-      aeson
+      aeson-alt
     , base         <5
     , base-compat
     , bytestring
@@ -97,7 +97,7 @@ executable aeson-example-simplest
   hs-source-dirs:   src/
   ghc-options:      -Wall
   build-depends:
-      aeson
+      aeson-alt
     , base                   <5
     , base-compat-batteries
     , bytestring
@@ -108,7 +108,7 @@ executable aeson-example-th
   main-is:          TemplateHaskell.hs
   ghc-options:      -Wall
   build-depends:
-      aeson
+      aeson-alt
     , base         <5
     , base-compat
     , bytestring

@@ -5,7 +5,7 @@ import Test.Tasty (TestTree, testGroup)
 import Test.Tasty.HUnit (testCase, assertEqual)
 import Data.Hashable (hash)
 
-import Data.Aeson
+import Data.AesonAlt
 
 ------------------------------------------------------------------------------
 -- Check that the hashes of two equal Value are the same

@@ -47,7 +47,7 @@ executable aeson-bench
     build-depends: text <2
 
   build-depends:
-      aeson
+      aeson-alt
     , attoparsec
     , attoparsec-aeson
     , base

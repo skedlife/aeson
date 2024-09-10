@@ -14,10 +14,10 @@ import Data.Foldable (foldl')
 import Data.Foldable.WithIndex (ifoldl')
 
 import qualified Data.Text as T
-import qualified Data.Aeson.Key as K
+import qualified Data.AesonAlt.Key as K
 import qualified Data.Scientific as Sci
 
-import Data.Aeson (Value (..))
+import Data.AesonAlt (Value (..))
 
 quickcheckTests :: TestTree
 quickcheckTests = testGroup "QuickCheck"

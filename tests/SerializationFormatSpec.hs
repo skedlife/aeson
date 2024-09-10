@@ -17,8 +17,8 @@ module SerializationFormatSpec
 import Prelude.Compat
 
 import Control.Applicative (Const(..))
-import Data.Aeson (FromJSON(..), decode, eitherDecode, encode, genericParseJSON, genericToEncoding, genericToJSON)
-import Data.Aeson.Types (Options(..), SumEncoding(..), ToJSON(..), defaultOptions)
+import Data.AesonAlt (FromJSON(..), decode, eitherDecode, encode, genericParseJSON, genericToEncoding, genericToJSON)
+import Data.AesonAlt.Types (Options(..), SumEncoding(..), ToJSON(..), defaultOptions)
 import Data.Fixed (Pico)
 import Data.Foldable (for_, toList)
 import Data.Functor.Compose (Compose(..))

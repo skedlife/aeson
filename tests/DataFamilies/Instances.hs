@@ -10,8 +10,8 @@ module DataFamilies.Instances () where
 
 import Prelude.Compat
 
-import Data.Aeson.TH
-import Data.Aeson.Types (FromJSON(..))
+import Data.AesonAlt.TH
+import Data.AesonAlt.Types (FromJSON(..))
 import DataFamilies.Types
 import Test.QuickCheck (Arbitrary(..), elements, oneof)
 

@@ -14,11 +14,11 @@ import           Test.QuickCheck       (ioProperty)
 import           Test.Tasty.HUnit      (assertFailure, testCase)
 import           Test.Tasty.QuickCheck (testProperty)
 
-import qualified Data.Aeson.Key        as K
-import qualified Data.Aeson.KeyMap     as KM
+import qualified Data.AesonAlt.Key        as K
+import qualified Data.AesonAlt.KeyMap     as KM
 import qualified Data.Scientific       as Sci
 
-import           Data.Aeson
+import           Data.AesonAlt
 
 noThunksTests :: TestTree
 noThunksTests = testGroup "nothunks"

@@ -7,8 +7,8 @@ module DataFamilies.Encoders (module DataFamilies.Encoders) where
 
 import Prelude.Compat
 
-import Data.Aeson.TH
-import Data.Aeson.Types
+import Data.AesonAlt.TH
+import Data.AesonAlt.Types
 import DataFamilies.Types
 import Options
 

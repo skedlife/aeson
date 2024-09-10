@@ -26,8 +26,8 @@ import GHC.Generics
 import Test.QuickCheck (Arbitrary (..), Property, counterexample, scale)
 import Test.QuickCheck.Gen (chooseUpTo)
 import qualified Data.Map as Map
-import Data.Aeson
-import Data.Aeson.Types
+import Data.AesonAlt
+import Data.AesonAlt.Types
 import Data.Word (Word64)
 
 type I = Identity
